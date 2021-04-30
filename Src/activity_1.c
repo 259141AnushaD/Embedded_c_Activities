@@ -1,4 +1,4 @@
-#include "Activity1.h"
+#include "activity_1.h"
 
 void peripheral_init(void)
 {
