@@ -22,4 +22,9 @@
 ## Simulation Output
 ![Activity4Output](https://github.com/259141AnushaD/Embedded_c_Activities/blob/main/simulation/Activity4%20output.png)
 
+#### CI and Code Quality
+
+|CI|Cppcheck|Codacy|
+|:--:|:--:|:--:|
+|[![CI](https://github.com/259141AnushaD/Embedded_c_Activities/actions/workflows/blank.yml/badge.svg)](https://github.com/259141AnushaD/Embedded_c_Activities/actions/workflows/blank.yml)|[![Cppcheck](https://github.com/259134lavanyabs/Activity1_embClavbs/actions/workflows/CodeQuality.yml/badge.svg)](https://github.com/259134lavanyabs/Activity1_embClavbs/actions/workflows/CodeQuality.yml)|[![Codacy Badge](https://app.codacy.com/project/badge/Grade/643b7ca2b2dc4daba1e700c216bb87d9)](https://www.codacy.com/gh/Bharathgopal/Emb-C/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Bharathgopal/Emb-C&amp;utm_campaign=Badge_Grade)|
 
