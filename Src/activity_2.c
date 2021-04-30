@@ -1,4 +1,4 @@
-#include "Activity2.h"
+#include "activity_2.h"
 
 void InitADC(){
 ADMUX=(1<<REFS0);   /*aref connected to AVCC*/
