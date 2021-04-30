@@ -1,4 +1,4 @@
-PROJ_NAME = SeatTemp
+PROJ_NAME = Seat_Temperature
 
 BUILD_DIR = Build
 
