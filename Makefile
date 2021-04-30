@@ -1,16 +1,13 @@
-PROJ_NAME = Seat_Temperature
+PROJ_NAME = SeatHeatingApplication
 
 BUILD_DIR = Build
 
 # All Source code files
-SRC = main.c\
-src/activity_1.c\
-src/activity_2.c\
-src/activity_3.c\
-src/activity_4.c
+MAIN = main.c
+SRC = $(wildcard src/*.c) $(MAIN)
 
 # All header file paths
-INC = -I inc
+INC = -Iinc
 
 # Find out the OS and configure the variables accordingly
 ifdef OS	# All configurations for Windwos OS
@@ -36,7 +33,7 @@ endif
 
 all:$(BUILD_DIR)
 # Compile the code and generate the ELF file
-	$(CC) -g -Wall -Os -mmcu=atmega328  $(INC) $(SRC) -o $(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).elf)
+	$(CC) -g -Wall -Os -mmcu=atmega328  $(INC) $(SRC) -o $(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).elf) -DF_CPU=16000000UL
 
 $(BUILD_DIR):
 # Create directory to store the built files
