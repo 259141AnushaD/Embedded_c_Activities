@@ -9,10 +9,10 @@
  * 
  */
 
-#include "Activity1.h"
-#include "Activity2.h"
-#include "Activity3.h"
-#include "Activity4.h"
+#include "activity_1.h"
+#include "activity_2.h"
+#include "activity_3.h"
+#include "activity_4.h"
 
 int main(void)
 {
