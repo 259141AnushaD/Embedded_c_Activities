@@ -1,29 +1,30 @@
-#include<avr/io.h>
-#include<util/delay.h>
-#define LED PB0                 // Using PB2 for LED
-#define SW1 PD0                 // Using PB0 for SW1
-#define SW2 PD4                 // Using PB1 for SW2
+#include "Activity1.h"
 
-int main(void)
+void peripheral_init(void)
 {
-    DDRB|=(1<<LED);             //Set PB2 as LED Indicator
-    DDRD&=~(1<<SW1);            //Set SW1 as Switch_1 Input;
-    DDRD&=~(1<<SW2);            //Set SW2 as Switch_2 Input;
-    PORTD|=(1<<SW1);            //Set SW1 as Internal Pull Up;
-    PORTD|=(1<<SW2);            //Set SW2 as Internal Pull Up;
-
-while(1)
-    {
-        if(!(PIND&(1<<SW1))&&!(PIND&(1<<SW2)))
-        {
-            PORTB|=(1<<LED);
-
-        }
-        else
-        {
-            PORTB&=~(1<<LED);
-
-        }
+	/* Configure LED Pin */
+	DDRB |= (1<<LED_PIN);
+	/* Configure Switch1 pin as Output */
+	DDRD &= ~(1<<SW_PIN_0);
+    SW_PORT |= (1<<SW_PIN_0);
+	/* Configure Switch2 pin as Output */
+    DDRD &= ~(1<<SW_PIN_1);
+    SW_PORT |= (1<<SW_PIN_1);
 }
+
+int initialize_led(){
+    /* Check if both Switch is closed; i.e Pins 2 and 3 of port D is low*/
+    if(!(PIND&(1<<SW_PIN_0)) && !(PIND&(1<<SW_PIN_1))){
+        /* Turn on LED */
+        LED_PORT |= (1<<LED_PIN);
+        _delay_ms(2000);
+        return 1;
+    }
+    else{
+        LED_PORT &= ~(1<<LED_PIN);
+        /* Turn off LED*/
+        _delay_ms(2000);
+        return 0;
+    }
 }
 
